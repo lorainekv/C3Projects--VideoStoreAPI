@@ -1,0 +1,27 @@
+{
+  "name": "video-store",
+  "version": "1.0.0",
+  "description": "The overall goal of this project is to create a system that a video store (remember those?) could use to track their inventory of rental videos and their collection of customers.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "pg": "^6.0.2",
+    "sequelize": "^3.23.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorainekv/C3Projects--VideoStoreAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lorainekv/C3Projects--VideoStoreAPI/issues"
+  },
+  "homepage": "https://github.com/lorainekv/C3Projects--VideoStoreAPI#readme"
+}
