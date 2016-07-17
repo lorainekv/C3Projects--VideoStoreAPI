@@ -16,25 +16,20 @@ describe('Customer', function() {
     before(function(done){
       db.Customer.sync({ force:true })
       .then(function() {
+
+        // Create a single customer
+        new_customer = {name: 'Loraine', postal_code: '98103', account_credit: 13.50}
+        db.Customer.create(new_customer).then(function() {
           done(null);
-          });
+        });
+      });
     });
       
-    it('should create a new customer', function(done) {
-      new_customer = {name: 'Loraine', postal_code: '98103', account_credit: 13.50}
-        
-      // Create customer
-      db.Customer.create(new_customer).then(function() {
-        // Then check if customer is created
-        db.Customer.findAndCountAll({
-          where: {
-            name: "Loraine" 
-          }
-        }).then(function(result){
-          // Assert the count equals 1
-          assert.equal(1,result.count)
-          done();
-        });
+    it('should have a new customer', function(done) {
+      // Check that the count equals 1 
+      db.Customer.count().then(function(count){
+        assert.equal(1,count)
+        done();
       });
     });
   });
